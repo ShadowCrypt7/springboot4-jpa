@@ -14,15 +14,23 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
+    @Column(length = 100, nullable = false)
     private String nome;
+
+    @Column(length = 100)
     private String email;
+
+    @Column(length = 15)
     private String telefone;
+
+    @Column(length = 100, nullable = false)
     private String senha;
 
     public User() {}
 
-    public User(long id, String nome, String email, String telefone, String senha) {
+    public User(Long id, String nome, String email, String telefone, String senha) {
         this.id = id;
         this.nome = nome;
         this.email = email;
