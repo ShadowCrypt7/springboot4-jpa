@@ -1,5 +1,6 @@
 package com.devRodrigoJr.courseSpringBootJPA.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -30,6 +31,7 @@ public class User implements Serializable {
     @Column(length = 100, nullable = false)
     private String senha;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
