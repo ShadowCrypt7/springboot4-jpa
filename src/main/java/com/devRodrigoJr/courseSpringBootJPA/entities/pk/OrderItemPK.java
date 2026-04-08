@@ -2,6 +2,7 @@ package com.devRodrigoJr.courseSpringBootJPA.entities.pk;
 
 import com.devRodrigoJr.courseSpringBootJPA.entities.Order;
 import com.devRodrigoJr.courseSpringBootJPA.entities.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
