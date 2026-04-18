@@ -1,4 +1,4 @@
-package com.devRodrigoJr.courseSpringBootJPA.resources;
+package com.devRodrigoJr.courseSpringBootJPA.repositories.resources;
 
 import com.devRodrigoJr.courseSpringBootJPA.entities.User;
 import com.devRodrigoJr.courseSpringBootJPA.services.UserServices;
@@ -43,6 +43,12 @@ public class UserResource {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         userServices.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User obj) {
+        obj = userServices.update(id, obj);
+        return ResponseEntity.ok().body(obj);
     }
 
 }
