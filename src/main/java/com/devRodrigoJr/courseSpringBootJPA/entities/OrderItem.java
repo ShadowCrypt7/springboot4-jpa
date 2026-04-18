@@ -77,4 +77,8 @@ public class OrderItem implements Serializable {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+    public double subTotal(Integer quantity, double price) {
+        return quantity * price;
+    }
 }
