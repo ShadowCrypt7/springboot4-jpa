@@ -2,6 +2,7 @@ package com.devRodrigoJr.courseSpringBootJPA.entities;
 
 import com.devRodrigoJr.courseSpringBootJPA.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -90,6 +91,14 @@ public class Order implements Serializable{
 
     public Set<OrderItem> getItens() {
         return itens;
+    }
+
+    public double getTotal() {
+        double sum = 0.0;
+        for (OrderItem x : itens) {
+            sum += x.getSubTotal();
+        }
+        return sum;
     }
 
     @Override
