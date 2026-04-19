@@ -1,4 +1,4 @@
-package com.devRodrigoJr.courseSpringBootJPA.repositories.resources;
+package com.devRodrigoJr.courseSpringBootJPA.resources;
 
 import com.devRodrigoJr.courseSpringBootJPA.entities.Order;
 import com.devRodrigoJr.courseSpringBootJPA.services.OrderServices;
